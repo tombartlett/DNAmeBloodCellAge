@@ -1,5 +1,5 @@
 # This file is part of DNAmeBloodCellAge.
-# Copyright (C) 2026 Tom Bartlett
+# Copyright (C) 2026 Tom Bartlett and University College London
 #
 # DNAmeBloodCellAge is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
