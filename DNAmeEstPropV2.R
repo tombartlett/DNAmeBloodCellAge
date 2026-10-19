@@ -36,13 +36,13 @@ for(iP in 1:length(CRANpackages)){
 
 numCores<-detectCores()
 
-RLMPIfunc<-function(tempX,tempA,tempW){;#X=AW'+e
+RLMPIfunc<-function(tempX,tempA,tempWeights){;#X=AW'+e
 	adj<-1e-15
 	commonFeat<-intersect(rownames(tempX),rownames(tempA))
 	tempX<-tempX[commonFeat,]
 	tempA<-tempA[commonFeat,]
 	tempW<-apply(tempX,2,function(tempData){
-		tempProps<-as.vector(summary(rlm(tempData~tempA,weights=tempW,wt.method="case",maxit=100))[["coefficients"]][-1,1])
+		tempProps<-as.vector(summary(rlm(tempData~tempA,weights=tempWeights,wt.method="case",maxit=100))[["coefficients"]][-1,1])
 		tempProps[tempProps<0]<-0;
 		tempProps<-tempProps/sum(tempProps)
 		return(tempProps)
